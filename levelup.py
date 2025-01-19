@@ -1,20 +1,22 @@
 import math
+
+
 class Levelup:
-    def get_all_primes_nb(self,nb):
-        def __init__():
-            pass
-        if not isinstance(nb,int):
-            raise ValueError("THE TYPE ISNT CONVENIENT")
-        allprimesnumbers=[]
-        
-        for number in range(2,nb):
-            for factor in range(2,int(math.sqrt(number))+1): 
-                if number % factor == 0:
-                    break ## we stop the for-loop
-            else: 
-                allprimesnumbers.append(number)
-        return allprimesnumbers
-                
-program1= Levelup()
-answers =program1.get_all_primes_nb(630)
+
+    def get_all_primes_nb(self,number):
+        if not isinstance(number,int):
+           raise ValueError("Integer values only are considered")
+        factors=[]
+        mydivisor=2
+        while mydivisor <= number:
+            if number % mydivisor==0:
+                factors.append(mydivisor) 
+                number = number // mydivisor
+            else :
+               mydivisor += 1 # I can't jump to a next while its divisor didn't work
+                                      # that the principle.
+        return factors              
+
+program1 = Levelup()
+answers = program1.get_all_primes_nb(121) 
 print(answers)
