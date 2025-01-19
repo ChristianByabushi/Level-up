@@ -21,13 +21,16 @@ class Levelup:
         if not isinstance(stringtext, str):
            raise ValueError('only text are accepted')  
         backward= ''.join(re.findall(r'[a-z]+', stringtext.lower())) 
-        foward=backward[::-1]
-        return backward[::-1]==foward
+        forward=backward[::-1]
+        return backward[::-1]==forward
         
-        
+    def sortwords(self,stringtext):
+        listes = sorted(stringtext.lower().split(' '))
+        return listes
         
 program1 = Levelup()
 #all_primes_nb = program1.get_all_primes_nb(121) 
-ispalindrome = program1.ispalindrome("ara$#,'") 
-print(ispalindrome)
+#ispalindrome = program1.ispalindrome("ara$#,'") 
+sorteswords = program1.sortwords("Vous pouvez aracher les ecorces'") 
 
+print(sorteswords)
