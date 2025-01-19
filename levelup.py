@@ -1,5 +1,5 @@
 import math
-
+import re
 
 class Levelup:
 
@@ -17,6 +17,17 @@ class Levelup:
                                       # that the principle.
         return factors              
 
+    def ispalindrome(self, stringtext):
+        if not isinstance(stringtext, str):
+           raise ValueError('only text are accepted')  
+        backward= ''.join(re.findall(r'[a-z]+', stringtext.lower())) 
+        foward=backward[::-1]
+        return backward[::-1]==foward
+        
+        
+        
 program1 = Levelup()
-answers = program1.get_all_primes_nb(121) 
-print(answers)
+#all_primes_nb = program1.get_all_primes_nb(121) 
+ispalindrome = program1.ispalindrome("ara$#,'") 
+print(ispalindrome)
+
