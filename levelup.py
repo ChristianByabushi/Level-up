@@ -83,7 +83,10 @@ class Levelup:
         else:
             print(f'({elapsed -  target: .3f} seconds too slow) ')
     
+
 program1 = Levelup()
+# x=program1.save_dictionnary() 
+# print(x)
 #all_primes_nb = program1.get_all_primes_nb(121) 
 #ispalindrome = program1.ispalindrome("ara$#,'") 
 #sorteswords = program1.sortwords("Vous pouvez aracher les ecorces'") 
