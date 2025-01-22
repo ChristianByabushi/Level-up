@@ -1,6 +1,7 @@
 import math
 import re
-
+import time
+import random
 class Levelup:
 
     def get_all_primes_nb(self,number):
@@ -60,12 +61,33 @@ class Levelup:
                     indices.append([index]+sub_index)
         return indices
         
+    def playing_game(self):
+        print("GAME IS ABOUT TO START")
+        print("**"*10)
+        target  = random.randint(2,4)
+        print(f'Your target time is {target} seconds')
+
+
+        input('---Press Enter to Begin---- : ')
+        start = time.perf_counter()
+        
+        input('---Press Enter again after {target} seconds...')
+        elapsed = time.perf_counter() - start 
+        
+        print(f'\n Elapsed time {elapsed :.3f} seconds')
+
+        if elapsed == target:
+            print('Wonderful! timing effect is okay ')
+        elif elapsed < target:
+            print(f'({target - elapsed: .3f} seconds too fast )')
+        else:
+            print(f'({elapsed -  target: .3f} seconds too slow) ')
+    
 program1 = Levelup()
 #all_primes_nb = program1.get_all_primes_nb(121) 
 #ispalindrome = program1.ispalindrome("ara$#,'") 
 #sorteswords = program1.sortwords("Vous pouvez aracher les ecorces'") 
-searchevalueitem=6
-list_where_the_value_is_searched = [[45,5,[43,5,[56,5,6],0,4],[34,[4,5,3,6],34,1]]]
-indices_where_finding_that_value= program1.search_in_depth_list(list_where_the_value_is_searched,searchevalueitem)
-print(indices_where_finding_that_value)
- 
+# searchevalueitem=[4,5,3,6]
+# list_where_the_value_is_searched = [[45,5,[43,5,[56,5,6],0,4],[34,[4,5,3,6],34,1]]]
+# indices_where_finding_that_value= program1.search_in_depth_list(list_where_the_value_is_searched,searchevalueitem)
+# print(indices_where_finding_that_value)
